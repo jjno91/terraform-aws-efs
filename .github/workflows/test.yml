@@ -5,8 +5,8 @@ permissions:
 jobs:
   main:
     steps:
-      - uses: actions/checkout
-      - uses: aws-actions/configure-aws-credentials
+      - uses: actions/checkout@main
+      - uses: aws-actions/configure-aws-credentials@main
         with:
           role-to-assume: arn:aws:iam::107018555615:role/github
       - run: aws sts get-caller-identity
