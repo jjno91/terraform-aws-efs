@@ -6,11 +6,11 @@ resource "aws_efs_file_system" "this" {
 }
 
 resource "aws_backup_vault" "this" {
-  name = "${var.name}-ecs-linux"
+  name = var.name
 }
 
 resource "aws_backup_plan" "this" {
-  name = "${var.name}-"
+  name = var.name
 
   rule {
     rule_name         = "main"
