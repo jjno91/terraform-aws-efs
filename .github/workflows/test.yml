@@ -15,8 +15,8 @@ jobs:
           aws-region: us-east-1
       - run: terraform init
       - run: terraform validate
-      - run: terraform apply
+      - run: terraform apply -auto-approve
       - run: terraform plan -detailed-exitcode
-      - run: terraform destroy
+      - run: terraform destroy -auto-approve
       - run: terraform plan -detailed-exitcode -destroy
       - run: terraform fmt -check
