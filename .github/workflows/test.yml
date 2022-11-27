@@ -1,4 +1,7 @@
 on: [ workflow_dispatch, push ]
+env:
+  TF_INPUT: false
+  TF_IN_AUTOMATION: true
 permissions:
   id-token: write
 jobs:
