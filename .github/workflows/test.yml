@@ -1,8 +1,8 @@
 on: [ workflow_dispatch, push ]
-runs-on: ubuntu-latest
 permissions:
   id-token: write
 jobs:
+  runs-on: ubuntu-latest
   main:
     steps:
       - uses: actions/checkout@main
