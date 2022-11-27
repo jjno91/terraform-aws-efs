@@ -10,4 +10,10 @@ jobs:
         with:
           role-to-assume: arn:aws:iam::107018555615:role/github
           aws-region: us-east-1
-      - run: aws sts get-caller-identity
+      - run: terraform init
+      - run: terraform validate
+      - run: terraform apply
+      - run: terraform plan -detailed-exitcode
+      - run: terraform destroy
+      - run: terraform plan -detailed-exitcode -destroy
+      - run: terraform fmt -check
