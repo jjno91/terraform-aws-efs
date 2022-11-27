@@ -5,8 +5,8 @@ jobs:
   main:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@main
-      - uses: aws-actions/configure-aws-credentials@main
+      - uses: actions/checkout@v3
+      - uses: aws-actions/configure-aws-credentials@v1
         with:
           role-to-assume: arn:aws:iam::107018555615:role/github
       - run: aws sts get-caller-identity
