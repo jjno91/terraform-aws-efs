@@ -1,0 +1,12 @@
+on: [ workflow_dispatch, push ]
+runs-on: ubuntu-latest
+permissions:
+  id-token: write
+jobs:
+  main:
+    steps:
+      - uses: actions/checkout
+      - uses: aws-actions/configure-aws-credentials
+        with:
+          role-to-assume: arn:aws:iam::107018555615:role/github
+      - run: aws sts get-caller-identity
